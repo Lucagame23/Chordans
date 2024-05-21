@@ -1,0 +1,193 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    transition: background-color 1s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #fff;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    opacity: 0.5;
+    transition: opacity 0.8s ease, transform 0.8s ease, background-color 0.8s ease, width 0.8s ease, height 0.8s ease;
+}
+
+.form-container.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#register-container.active,
+#login-container.active {
+    width: 350px;
+    height: 350px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.8s ease, border-color 0.8s ease, color 0.8s ease;
+}
+
+button {
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.switch-form,
+.switch-form a {
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.8s ease;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.theme-toggle label {
+    display: block;
+    width: 50px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-toggle label:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked + label {
+    background-color: #007bff;
+}
+
+.theme-toggle input[type="checkbox"]:checked + label:before {
+    transform: translateX(20px);
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .form-container,
+.dark-theme input[type="text"],
+.dark-theme input[type="email"],
+.dark-theme input[type="password"] {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
+}
+
+.success-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.success-message.active {
+    opacity: 1;
+}
+
+/* Media Queries */
+
+/* Notebooks (width >= 1200px) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-container {
+        margin: 10px;
+    }
+}
+
+/* Tablets ( 600px <= width <= 1199px) */
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Celulares (width <= 600px) */
+@media only screen and (max-width: 600px) {
+    .form-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    #register-container.active,
+    #login-container.active {
+        width: 300px;
+        height: 300px;
+    }
+}

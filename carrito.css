@@ -1,0 +1,19 @@
+/* Estilos del carrito */
+#carrito {
+    display: none; /* El carrito estará oculto inicialmente */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    z-index: 9999;
+}
+/* Estilos del detalle de compra */
+#detalle-compra {
+    margin-top: 20px;
+}
+/* Estilos de los productos seleccionados */
+.producto-seleccionado {
+    margin-bottom: 10px;
+}
