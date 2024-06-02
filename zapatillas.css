@@ -7,8 +7,6 @@ body {
   color: #000000;
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -43,11 +41,11 @@ nav .logo {
 
 nav ul {
   list-style: none;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul li {
-  display: inline-block;
   margin-left: 40px;
 }
 
@@ -57,6 +55,9 @@ nav ul li a {
   font-size: 18px;
 }
 
+nav ul li a:hover {
+  color: #02448a;
+}
 
 .spacer {
   height: 120px;
@@ -76,7 +77,6 @@ nav ul li a {
 
 .imagen:nth-child(1) {
   background-color: #ffeeba;
-  /* Color de fondo para la primera imagen */
   color: rgb(223, 151, 64);
   padding: 20px;
   border-radius: 10px;
@@ -86,14 +86,12 @@ nav ul li a {
   flex-direction: row-reverse;
   color: #ffffff;
   background-color: #c97ab5;
-  /* Color de fondo para la segunda imagen */
   padding: 20px;
   border-radius: 10px;
 }
 
 .imagen:nth-child(3) {
   background-color: #b8daff;
-  /* Color de fondo para la tercera imagen */
   color: #02448a;
   padding: 20px;
   border-radius: 10px;
@@ -113,6 +111,10 @@ nav ul li a {
   margin-top: 10px;
 }
 
+.imagen h2:hover {
+  color: #ff6347;
+}
+
 #titulo {
   text-align: center;
   font-size: 100px;
@@ -122,7 +124,6 @@ nav ul li a {
   padding-bottom: 20px;
 }
 
-/* Espacio reservado para info de michael */
 .parrafo {
   font-size: 35px;
   color: #000000;
@@ -134,11 +135,6 @@ nav ul li a {
   justify-content: center;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.imagen {
-  margin-right: 20px;
-  margin-left: 10px;
 }
 
 .imagen {
@@ -184,6 +180,11 @@ nav ul li a {
   margin-top: 20px;
 }
 
+.contenedor-text a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .contenedor-nav video {
   position: absolute;
   right: 0;
@@ -209,6 +210,11 @@ nav ul li a {
   border: 1px solid #000000;
   border-radius: 5px;
   font-size: 16px;
+}
+
+#searchInput:focus {
+  border-color: #02448a;
+  outline: 2px solid #636d9f;
 }
 
 #searchButton {
@@ -239,6 +245,9 @@ nav ul li a {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  margin: 20px;
 }
 
 .product:hover {
@@ -292,51 +301,9 @@ nav ul li a {
   background-color: #02448a;
 }
 
-/* Media Queries */
-
-@media only screen and (max-width: 1199px) {
-  .container {
-    padding: 20px 10px;
-  }
-
-  #searchInput {
-    width: calc(100% - 120px);
-  }
-
-  #searchButton {
-    width: 100px;
-  }
-
-  .product {
-    width: calc(33.33% - 20px);
-  }
+.buy-button:focus {
+  outline: 2px solid #02448a;
 }
-
-@media only screen and (max-width: 900px) {
-  .product {
-    width: calc(50% - 20px);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .container {
-    padding: 20px 5px;
-  }
-
-  #searchInput {
-    width: calc(100% - 90px);
-  }
-
-  #searchButton {
-    width: 80px;
-  }
-
-  .product {
-    width: calc(100% - 20px);
-  }
-}
-
-/* Estilos para la barra de navegacion */
 
 .nav {
   height: 60px;
@@ -360,9 +327,9 @@ nav ul li a {
 }
 
 .nav .nav-links {
-  display: inline;
-  float: right;
-  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
 }
 
 .nav .nav-links a {
@@ -436,8 +403,6 @@ nav ul li a {
   }
 }
 
-
-
 .footer {
   background-color: #333;
   color: #fff;
@@ -449,7 +414,6 @@ nav ul li a {
   margin: 0 auto;
 }
 
-/* Estilos de los productos */
 .product-card {
   width: calc(33.333% - 20px);
   margin: 0 10px 40px;
@@ -493,4 +457,39 @@ nav ul li a {
 
 .product-card button:hover {
   background-color: #333333;
+}
+
+.product-card button:focus {
+  outline: 2px solid #333333;
+}
+
+/* Pseudoclases adicionales */
+
+nav ul li a:active {
+  color: #ff6347;
+}
+
+nav ul li a:visited {
+  color: #7a7a7a;
+}
+
+#searchInput:focus {
+  outline: 2px solid #636d9f;
+}
+
+.parrafo:hover {
+  background-color: #ffddaa;
+  animation: none;
+}
+
+.contenedor-text a:focus {
+  outline: 2px solid #02448a;
+}
+
+.buy-button:focus {
+  outline: 2px solid #02448a;
+}
+
+.product-card button:focus {
+  outline: 2px solid #333333;
 }
